@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 :root {
   --background-purple: #540B51;
   --background-ivory: #F3EAE2;
@@ -15,27 +18,24 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
-
+/* 
 img {
   max-width: 100%;
-}
+} */
 
 .navbar {
+  position: fixed;
+  /* The inset substitute the top, left, right, bottom  */
+  inset: 0 0 auto 0; 
   background-color: var(--background-purple);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 1em 1.625em;
+  padding: 1em 2em;
+  z-index: 200;
 }
-
-.navbar > * {
-  background-color: var(--background-purple);
-  position: fixed;
-  align-self: center;
-}
-
-
 
 .navbar img {
   max-width: 6.25em
@@ -43,6 +43,11 @@ img {
 
 .navbar ul {
   display: none;
+}
+
+.navbar-cta {
+  display: flex;
+  gap: 2em;
 }
 
 .navbar-cta img {
@@ -55,4 +60,135 @@ img {
   border: none;
   padding: 0;
 }
+
+header {
+  background-color: var(--background-purple);
+  color: var(--background-ivory);
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em;
+}
+
+header h1 {
+  margin: 1.85em auto 0;
+  max-width: 15ch;
+  font-size: 4em;
+  text-align: center;
+}
+
+header p {
+  text-align: center;
+  font-weight: bold;
+  margin: .25em 0 1em;
+}
+
+header p span {
+  color: var(--paragraph-yellow);
+  margin-right: .15em;
+}
+
+.sign-cta {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+  gap: 1em;
+}
+
+.sign-cta button {
+  background-color: #fff;
+  padding: 1em 0;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold; 
+  word-spacing: .075em; 
+  color: var(--footer-links-grey);
+}
+
+.sign-cta button img {
+  background-color: #fff;
+  height: 60px;
+  border-radius: 5px;
+  position: absolute;
+  left: .25em;
+  padding: .2rem;
+}
+
+.sign-cta button:has(img) {
+  background-color: var(--button-blue);
+  color: #FFF;
+  padding: 1.45rem 1.45rem 1.55rem;
+  position: relative;
+}
+
+.hero-div {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-div img{
+  transform: scale(0.7);
+  margin-left: -10rem;
+}
+
+main {
+  position: relative;
+  background-color: var(--background-ivory);
+  margin-top: -100px;
+  z-index: 100;
+
+}
+
+main section:first-child p {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  padding: 3em 0 1em 0;
+  word-spacing: 0.1em;
+}
+
+.companies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em 2em;
+  margin: 1em;
+  padding: 0 3em;
+}
+
+.companies > * {
+  max-height: 3.25em;
+}
+
+.thumbnail-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  max-width: 100%;
+  margin: 3em 0;
+}
+
+.thumbnail-img img {
+  max-width: 90%;  
+}
+
+.left {
+  justify-content: flex-end;
+}
+
+section h2 {
+  margin: 1em 0;
+  text-align: center;
+
+}
+
+
+
+
+
 
