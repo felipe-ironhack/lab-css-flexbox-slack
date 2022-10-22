@@ -1,10 +1,58 @@
-/*
-background purple: #540B51
-background ivory: #F3EAE2
-button blue: #4285F4
-titles black: #191817
-paragraph black: #000000
-paragraph yellow: #ECB12F
-links blue: #2E71A6
-footer links grey: #454245
-*/
+:root {
+  --background-purple: #540B51;
+  --background-ivory: #F3EAE2;
+  --button-blue: #4285F4;
+  --titles-black: #191817;
+  --paragraph-black: #000000;
+  --paragraph-yellow: #ECB12F;
+  --links-blue: #2E71A6;
+  --footer-links-grey: #454245;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+.navbar {
+  background-color: var(--background-purple);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1em 1.625em;
+}
+
+.navbar > * {
+  background-color: var(--background-purple);
+  position: fixed;
+  align-self: center;
+}
+
+
+
+.navbar img {
+  max-width: 6.25em
+}
+
+.navbar ul {
+  display: none;
+}
+
+.navbar-cta img {
+  background-color: var(--background-purple);
+  border: none;
+}
+
+.navbar-cta button {
+  background-color: var(--background-purple);
+  border: none;
+  padding: 0;
+}
+
