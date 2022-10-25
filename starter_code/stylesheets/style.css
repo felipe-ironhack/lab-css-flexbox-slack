@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
+/* 
+  This is a way of setting variables 
+  that can be reused on the CSS, 
+  placing it here make it acessible anywhere in that CSS file
+*/
 :root {
   --background-purple: #540B51;
   --background-ivory: #F3EAE2;
@@ -12,6 +17,11 @@
   --footer-links-grey: #454245;
 }
 
+
+/* 
+  This is a simple reset for the styles 
+  so I can have more control over positioning
+*/
 *,
 *::before,
 *::after {
@@ -20,14 +30,14 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
-/* 
-img {
-  max-width: 100%;
-} */
+
 
 .navbar {
   position: fixed;
-  /* The inset substitute the top, left, right, bottom  */
+  --test: red;
+  /* 
+    The inset substitute the top, left, right, bottom 
+  */
   inset: 0 0 auto 0; 
   background-color: var(--background-purple);
   display: flex;
@@ -119,6 +129,11 @@ header p span {
   padding: .2rem;
 }
 
+/*
+  This is not the most recommended way of writing,
+  it's just an example so you know it exists 
+  (it might break on older browsers)
+*/
 .sign-cta button:has(img) {
   background-color: var(--button-blue);
   color: #FFF;
@@ -141,9 +156,11 @@ main {
   background-color: var(--background-ivory);
   margin-top: -100px;
   z-index: 100;
-
 }
 
+/* 
+ This is a pseudo-class 
+*/
 main section:first-child p {
   font-size: 1.3em;
   text-transform: uppercase;
@@ -156,6 +173,7 @@ main section:first-child p {
 .companies {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1em 2em;
   margin: 1em;
   padding: 0 3em;
@@ -181,11 +199,167 @@ main section:first-child p {
   justify-content: flex-end;
 }
 
-section h2 {
-  margin: 1em 0;
-  text-align: center;
+
+/* 
+  This brings together the pseudo-class :not()  
+  and the :has().
+  It's basically looking for a div that doesn't has a img inside
+*/
+.thumbnail-info div:not(:has(img)) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5%;
+}
+
+.thumbnail-info h2 {
+  font-size: 1.5rem;
+  margin: 1em 0 0 5%;
 
 }
+
+.thumbnail-info p {
+  margin: 2em 0 0 5%;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.thumbnail-info a {
+  margin: 5%;
+  color: var(--links-blue);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* 
+  A pseudo-class that can be useful for styling 
+*/
+.thumbnail-info a::after {
+  content: url('../images/icon-arrow-right.png');
+  margin-left: 5px;
+  word-spacing: 2px;
+}
+
+.sales-cta {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%
+}
+
+.sales-cta h3 {
+  font-size: 1.6rem;
+  margin: 3em 3em .75em;
+  text-align: center;
+}
+
+.sales-cta p {
+  font-size: 1rem;
+   margin: 0em 3.5em;
+  text-align: center;
+}
+
+.sales-cta div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.sales-cta div button {
+  width: 90%;
+  margin: 1em 0;
+  border: none;
+  border-radius: 5px;
+  padding: 1.5rem 0;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.sales-cta div :first-child {
+  background-color: var(--background-purple);
+  color: white;
+}
+
+.sales-cta div :last-child {
+  background-color: transparent;
+  color: var(--background-purple);
+  border: 2px solid var(--background-purple);
+}
+
+.sales-cta ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin: 2em 0;
+}
+
+.sales-cta p span {
+  color: var(--background-purple);
+  font-weight: bolder;
+  font-size: 3em;
+}
+
+.sales-cta p:has(sup) {
+  font-size: 1rem;
+  padding: 0 5em;
+  font-weight: bold;
+}
+
+.white-background {
+  background-color: white;
+}
+
+.purple {
+  background-color: var(--background-purple);
+  border-bottom-left-radius: 800%600px;
+  border-bottom-right-radius: 800%600px;
+
+}
+
+.banner-sales {
+  background-color: transparent;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.banner-sales h3 {
+  font-size: 2rem;
+  margin: 1em 1em;
+  text-align: center;
+}
+
+.banner-sales button {
+  width: 90%;
+  padding: 1.5rem 0;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.banner-sales :nth-child(2) {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.banner-sales :nth-child(3) {
+  color: var(--background-purple);
+  background-color: white;
+  border: 2px solid white;
+  margin-bottom: 5em;
+}
+
+
+
+
 
 
 
